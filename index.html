@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vraj Patel - Computer Science and AI portfolio featuring web, mobile, database, and AI-powered projects.">
+  <title>Vraj Patel | AI-Focused Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <canvas id="three-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#home" aria-label="Vraj Patel home">VP</a>
+    <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <p class="eyebrow reveal">Software Developer / AI Direction</p>
+        <h1 class="hero-title reveal"><span id="hero-name">Vraj Patel</span></h1>
+        <p class="typing-line reveal">Developer focused on <span id="typed-role"></span></p>
+        <p class="hero-copy reveal">I build across web, mobile, data, and AI while growing toward machine learning systems. The work is practical, polished, and built to make complex workflows feel usable.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary magnetic" href="#projects"><i class="fa-solid fa-layer-group"></i><span>View Work</span></a>
+          <a class="btn btn-secondary magnetic" href="assets/Vraj_Patel_Resume_Updated_2026.pdf" download><i class="fa-solid fa-file-arrow-down"></i><span>Resume</span></a>
+        </div>
+        <div class="social-row reveal" id="hero-social"></div>
+      </div>
+      <aside class="hero-identity reveal" aria-label="Profile card">
+        <div class="glass-profile-card">
+          <div class="glass-card-topline">
+            <span>Candidate Profile</span>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="profile-photo-shell">
+            <img src="assets/vraj-profile.png" alt="Vraj Patel headshot">
+          </div>
+          <h2>Vraj Patel</h2>
+          <p>Developer focused on web, mobile, data, and AI</p>
+          <div class="profile-chips">
+            <span>Web</span>
+            <span>Mobile</span>
+            <span>Data</span>
+            <span>AI</span>
+          </div>
+          <div class="profile-signal">
+            <span></span>
+            <strong>NYIT CS + AI / GPA 3.91</strong>
+          </div>
+        </div>
+      </aside>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to about">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">About</p>
+        <h2>Builder with a systems mindset.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p id="bio-text"></p>
+          <div class="stats-grid" id="stats-grid"></div>
+          <a class="inline-link magnetic" href="assets/Vraj_Patel_Resume_Updated_2026.pdf" download>
+            <i class="fa-solid fa-download"></i>
+            <span>Download resume</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience section" id="experience">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Experience</p>
+        <h2>Practical work, clear outcomes.</h2>
+      </div>
+      <div class="timeline" id="experience-list"></div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected systems and experiments.</h2>
+      </div>
+      <div class="project-carousel-shell">
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <section class="skills section" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Skills</p>
+        <h2>Tools I use to ship.</h2>
+      </div>
+      <div class="skills-shell">
+        <div class="skill-grid" id="skill-grid"></div>
+      </div>
+    </section>
+
+    <section class="testimonials section" id="testimonials">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Signals</p>
+        <h2>What the work says.</h2>
+      </div>
+      <div class="testimonial-carousel" id="testimonial-carousel"></div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's build something useful.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-panel reveal">
+          <div id="contact-details"></div>
+          <div class="location-map">
+            <iframe
+              title="Map showing Long Island with a pin at Hicksville"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-73.98%2C40.50%2C-72.95%2C41.02&amp;layer=mapnik&amp;marker=40.7684%2C-73.5251"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-status" aria-live="polite">
+              <span class="map-mode" id="map-mode">Local mode</span>
+              <strong id="ny-time">New York time</strong>
+              <span>Available Mon-Fri, 12-5 PM</span>
+            </div>
+            <a class="map-link" href="https://www.openstreetmap.org/?mlat=40.7684&amp;mlon=-73.5251#map=10/40.7684/-73.5251" target="_blank" rel="noreferrer">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Hicksville, Long Island</span>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <label>
+            <input type="text" name="name" placeholder=" " required>
+            <span>Name</span>
+          </label>
+          <label>
+            <input type="email" name="email" placeholder=" " required>
+            <span>Email</span>
+          </label>
+          <label>
+            <textarea name="message" rows="5" placeholder=" " required></textarea>
+            <span>Message</span>
+          </label>
+          <button class="btn btn-primary magnetic" type="submit"><i class="fa-solid fa-paper-plane"></i><span>Send</span></button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Vraj Patel. Built with intention.</p>
+    <div class="footer-social" id="footer-social"></div>
+    <a class="back-top" href="#home" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+  </footer>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js",
+        "animejs": "https://cdn.jsdelivr.net/npm/animejs/+esm"
+      }
+    }
+  </script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/animations.js"></script>
+  <script type="module" src="js/three-scene.js"></script>
+</body>
+</html>
