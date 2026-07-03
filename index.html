@@ -7,26 +7,30 @@
   <title>Vraj Patel | AI-Focused Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260703">
 </head>
 <body>
   <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span class="cursor-label"></span></div>
   <div class="scroll-progress" aria-hidden="true"></div>
   <canvas id="three-canvas" aria-hidden="true"></canvas>
 
   <header class="site-header" id="site-header">
-    <a class="brand" href="#home" aria-label="Vraj Patel home">VP</a>
+    <a class="brand" href="#home" aria-label="Vraj Patel home">VRAJ PATEL</a>
     <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
-      <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#experience">Experience</a>
+      <a href="#experience">Work</a>
       <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
+    <span class="chapter-indicator" id="chapter-indicator" aria-live="polite">01 / About</span>
+    <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false">
+      <i class="fa-solid fa-wave-square"></i>
+      <span>Motion</span>
+    </button>
+    <span class="status-tag"><span class="dot" aria-hidden="true"></span>open to work</span>
     <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
       <i class="fa-solid fa-bars"></i>
     </button>
@@ -35,57 +39,74 @@
   <main>
     <section class="hero section" id="home">
       <div class="hero-content">
-        <p class="eyebrow reveal">Software Developer / AI Direction</p>
-        <h1 class="hero-title reveal"><span id="hero-name">Vraj Patel</span></h1>
-        <p class="typing-line reveal">Developer focused on <span id="typed-role"></span></p>
-        <p class="hero-copy reveal">I build across web, mobile, data, and AI while growing toward machine learning systems. The work is practical, polished, and built to make complex workflows feel usable.</p>
-        <div class="hero-actions reveal">
-          <a class="btn btn-primary magnetic" href="#projects"><i class="fa-solid fa-layer-group"></i><span>View Work</span></a>
-          <a class="btn btn-secondary magnetic" href="assets/Vraj_Patel_Resume_Updated_2026.pdf" download><i class="fa-solid fa-file-arrow-down"></i><span>Resume</span></a>
-        </div>
-        <div class="social-row reveal" id="hero-social"></div>
+        <p class="eyebrow reveal">Full-Stack Developer / AI & CS @ NYIT</p>
+        <h1 class="hero-title reveal">VRAJ<br><span>PATEL</span></h1>
+        <p class="hero-copy reveal">Computer Science student at NYIT, <strong>3.91 GPA</strong>, building full-stack products end to end, from e-commerce storefronts to <strong>AI-assisted</strong> finance apps.</p>
       </div>
-      <aside class="hero-identity reveal" aria-label="Profile card">
-        <div class="glass-profile-card">
-          <div class="glass-card-topline">
-            <span>Candidate Profile</span>
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-          </div>
-          <div class="profile-photo-shell">
-            <img src="assets/vraj-profile.png" alt="Vraj Patel headshot">
-          </div>
-          <h2>Vraj Patel</h2>
-          <p>Developer focused on web, mobile, data, and AI</p>
-          <div class="profile-chips">
-            <span>Web</span>
-            <span>Mobile</span>
-            <span>Data</span>
-            <span>AI</span>
-          </div>
-          <div class="profile-signal">
-            <span></span>
-            <strong>NYIT CS + AI / GPA 3.91</strong>
-          </div>
-        </div>
+      <aside class="hero-photo-wrap reveal" aria-label="Profile photo">
+        <img src="assets/vraj-profile.png" alt="Portrait of Vraj Patel">
+        <span class="photo-frame-label">NY / 2026</span>
       </aside>
       <a class="scroll-cue" href="#about" aria-label="Scroll to about">
         <span></span>
       </a>
     </section>
 
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span><i class="fa-solid fa-circle"></i>JavaScript</span>
+        <span><i class="fa-solid fa-circle"></i>TypeScript</span>
+        <span><i class="fa-solid fa-circle"></i>React Native</span>
+        <span><i class="fa-solid fa-circle"></i>Java</span>
+        <span><i class="fa-solid fa-circle"></i>Supabase</span>
+        <span><i class="fa-solid fa-circle"></i>PostgreSQL</span>
+        <span><i class="fa-solid fa-circle"></i>Python</span>
+        <span><i class="fa-solid fa-circle"></i>Artificial Intelligence</span>
+        <span><i class="fa-solid fa-circle"></i>JavaScript</span>
+        <span><i class="fa-solid fa-circle"></i>TypeScript</span>
+        <span><i class="fa-solid fa-circle"></i>React Native</span>
+        <span><i class="fa-solid fa-circle"></i>Java</span>
+        <span><i class="fa-solid fa-circle"></i>Supabase</span>
+        <span><i class="fa-solid fa-circle"></i>PostgreSQL</span>
+        <span><i class="fa-solid fa-circle"></i>Python</span>
+        <span><i class="fa-solid fa-circle"></i>Artificial Intelligence</span>
+      </div>
+    </div>
+
     <section class="about section" id="about">
       <div class="section-heading reveal">
         <p class="eyebrow">About</p>
-        <h2>Builder with a systems mindset.</h2>
+        <h2>About</h2>
       </div>
       <div class="about-grid">
         <div class="about-copy reveal">
           <p id="bio-text"></p>
-          <div class="stats-grid" id="stats-grid"></div>
-          <a class="inline-link magnetic" href="assets/Vraj_Patel_Resume_Updated_2026.pdf" download>
-            <i class="fa-solid fa-download"></i>
-            <span>Download resume</span>
-          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="education section" id="education">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Education</p>
+        <h2>Education</h2>
+      </div>
+      <div class="education-list reveal">
+        <div class="edu-row">
+          <div>
+            <div class="edu-school">New York Institute of Technology</div>
+            <div class="edu-meta">Bachelor of Computer Science, Concentration in AI · Old Westbury, NY · <span class="edu-gpa">GPA 3.91</span></div>
+            <div class="courses">
+              <span class="course-tag">Data Structures</span>
+              <span class="course-tag">Algorithms</span>
+              <span class="course-tag">Operating Systems</span>
+              <span class="course-tag">Theory of Computation</span>
+              <span class="course-tag">Computer Networks</span>
+              <span class="course-tag">Database Management</span>
+              <span class="course-tag">Artificial Intelligence</span>
+              <span class="course-tag">Software Engineering</span>
+            </div>
+          </div>
+          <span class="edu-date">Expected Dec 2026</span>
         </div>
       </div>
     </section>
@@ -93,7 +114,7 @@
     <section class="experience section" id="experience">
       <div class="section-heading reveal">
         <p class="eyebrow">Experience</p>
-        <h2>Practical work, clear outcomes.</h2>
+        <h2>Experience</h2>
       </div>
       <div class="timeline" id="experience-list"></div>
     </section>
@@ -101,7 +122,7 @@
     <section class="projects section" id="projects">
       <div class="section-heading reveal">
         <p class="eyebrow">Projects</p>
-        <h2>Selected systems and experiments.</h2>
+        <h2>Projects</h2>
       </div>
       <div class="project-carousel-shell">
         <div class="project-grid" id="project-grid"></div>
@@ -111,19 +132,11 @@
     <section class="skills section" id="skills">
       <div class="section-heading reveal">
         <p class="eyebrow">Skills</p>
-        <h2>Tools I use to ship.</h2>
+        <h2>Skills</h2>
       </div>
       <div class="skills-shell">
         <div class="skill-grid" id="skill-grid"></div>
       </div>
-    </section>
-
-    <section class="testimonials section" id="testimonials">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Signals</p>
-        <h2>What the work says.</h2>
-      </div>
-      <div class="testimonial-carousel" id="testimonial-carousel"></div>
     </section>
 
     <section class="contact section" id="contact">
@@ -164,7 +177,7 @@
             <textarea name="message" rows="5" placeholder=" " required></textarea>
             <span>Message</span>
           </label>
-          <button class="btn btn-primary magnetic" type="submit"><i class="fa-solid fa-paper-plane"></i><span>Send</span></button>
+          <button class="btn btn-primary magnetic contact-submit" id="contact-submit" type="submit"><i class="fa-solid fa-paper-plane"></i><span>Send</span></button>
           <p class="form-status" id="form-status" role="status"></p>
         </form>
       </div>
@@ -177,6 +190,27 @@
     <a class="back-top" href="#home" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
   </footer>
 
+  <div class="command-palette" id="command-palette" aria-hidden="true">
+    <div class="command-panel" role="dialog" aria-modal="true" aria-labelledby="command-title" tabindex="-1">
+      <div class="command-topline">
+        <span id="command-title">Command</span>
+        <kbd>Esc</kbd>
+      </div>
+      <input id="command-input" type="text" autocomplete="off" spellcheck="false" placeholder="Jump, copy, open...">
+      <div class="command-list" id="command-list" role="listbox"></div>
+    </div>
+  </div>
+
+  <div class="project-detail-modal" id="project-detail-modal" aria-hidden="true">
+    <div class="project-detail-panel" role="dialog" aria-modal="true" aria-labelledby="project-detail-title" tabindex="-1">
+      <button class="project-detail-close" id="project-detail-close" type="button" aria-label="Close project details">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="project-detail-media" id="project-detail-media" aria-hidden="true"></div>
+      <div class="project-detail-content" id="project-detail-content"></div>
+    </div>
+  </div>
+
   <script type="importmap">
     {
       "imports": {
@@ -185,9 +219,9 @@
       }
     }
   </script>
-  <script src="js/portfolio-data.js"></script>
-  <script src="js/main.js"></script>
-  <script type="module" src="js/animations.js"></script>
-  <script type="module" src="js/three-scene.js"></script>
+  <script src="js/portfolio-data.js?v=20260703d"></script>
+  <script src="js/main.js?v=20260703d"></script>
+  <script type="module" src="js/animations.js?v=20260703d"></script>
+  <script type="module" src="js/three-scene.js?v=20260703d"></script>
 </body>
 </html>

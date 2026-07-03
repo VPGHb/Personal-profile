@@ -5,6 +5,76 @@ function updateProgress() {
   progressBar.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
 }
 
+function isMotionReduced() {
+  return document.documentElement.classList.contains("motion-reduced") || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function setupMarqueeVelocity() {
+  const track = document.querySelector(".marquee-track");
+  if (!track) return;
+
+  let x = 0;
+  let velocity = 0.34;
+  let scrollBoost = 0;
+  let lastScrollY = window.scrollY;
+  let segmentWidth = 1;
+  let running = false;
+
+  function measure() {
+    segmentWidth = Math.max(track.scrollWidth / 2, 1);
+  }
+
+  function stopManual() {
+    running = false;
+    track.classList.remove("is-manual");
+    track.style.transform = "";
+  }
+
+  function startManual() {
+    if (isMotionReduced()) {
+      stopManual();
+      return;
+    }
+    measure();
+    track.classList.add("is-manual");
+    if (!running) {
+      running = true;
+      requestAnimationFrame(tick);
+    }
+  }
+
+  function tick() {
+    if (!running || isMotionReduced()) {
+      stopManual();
+      return;
+    }
+
+    scrollBoost *= 0.9;
+    velocity += (0.34 + scrollBoost - velocity) * 0.08;
+    x = (x - velocity) % segmentWidth;
+    track.style.transform = `translate3d(${x}px, 0, 0)`;
+    requestAnimationFrame(tick);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (isMotionReduced()) return;
+    const delta = Math.abs(window.scrollY - lastScrollY);
+    lastScrollY = window.scrollY;
+    scrollBoost = Math.min(3.2, scrollBoost + delta * 0.018);
+  }, { passive: true });
+
+  window.addEventListener("resize", measure);
+  window.addEventListener("portfolio:motionchange", (event) => {
+    if (event.detail.reduced) {
+      stopManual();
+    } else {
+      startManual();
+    }
+  });
+
+  startManual();
+}
+
 function setupFallbackReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -15,7 +85,7 @@ function setupFallbackReveal() {
     });
   }, { threshold: 0.18 });
 
-  document.querySelectorAll(".reveal, .skill-card").forEach((element) => observer.observe(element));
+  document.querySelectorAll(".reveal:not(.hero-title):not(.hero-photo-wrap), .skill-card").forEach((element) => observer.observe(element));
 }
 
 function setupButtonMotion(animate) {
@@ -34,7 +104,7 @@ function setupButtonMotion(animate) {
 }
 
 function setupAnimeReveal(animate, onScroll) {
-  document.querySelectorAll(".reveal").forEach((element) => {
+  document.querySelectorAll(".reveal:not(.hero-title):not(.hero-photo-wrap)").forEach((element) => {
     animate(element, {
       opacity: [0, 1],
       y: [28, 0],
@@ -82,6 +152,7 @@ function setupSkillObserver() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   updateProgress();
+  setupMarqueeVelocity();
   window.addEventListener("scroll", updateProgress, { passive: true });
   window.addEventListener("resize", updateProgress);
 

@@ -20,10 +20,10 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 const starTravelSpeed = 1.8;
-const starTwinkleAmount = 60; // 0 = no twinkle, 100 = strong twinkle
-const linearStarAmount = .3; // 0 = all tunnel drift, 1 = all center-to-edge motion
+const starTwinkleAmount = 90; // 0 = no twinkle, 100 = strong twinkle
+const linearStarAmount = .100; // 0 = all tunnel drift, 1 = all center-to-edge motion
 const starCount = 5200;
-const dustCount = 9000;
+const dustCount = 90;
 const starPositions = new Float32Array(starCount * 3);
 const starColors = new Float32Array(starCount * 3);
 const dustPositions = new Float32Array(dustCount * 3);
@@ -31,6 +31,9 @@ const starSeeds = [];
 const dustSeeds = [];
 const tunnelDepth = 95;
 const mouse = new THREE.Vector2(0, 0);
+let lastInputTime = performance.now();
+let idleBlend = 0;
+let sceneMotionReduced = localStorage.getItem("portfolio-motion") === "reduced" || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function createStarTexture() {
   const textureCanvas = document.createElement("canvas");
@@ -98,6 +101,7 @@ const nebulaLayers = [
   createNebulaLayer({ x: 17, y: -8, z: -92, scale: 78, opacity: 0.42, rotation: 1.7 }),
   createNebulaLayer({ x: 3, y: 0, z: -110, scale: 95, opacity: 0.28, rotation: -0.6 })
 ];
+const nebulaBaseOpacity = nebulaLayers.map((layer) => layer.material.opacity);
 
 function chooseStarColor() {
   if (Math.random() > 0.3) {
@@ -151,7 +155,7 @@ dustGeometry.setAttribute("position", new THREE.BufferAttribute(dustPositions, 3
 
 const starMaterial = new THREE.PointsMaterial({
   color: 0xffffff,
-  size: .090,
+  size: .100,
   map: createStarTexture(),
   vertexColors: true,
   transparent: true,
@@ -227,7 +231,7 @@ function updateStars(time) {
     starPositions[positionIndex + 1] = Math.sin(seed.angle) * radius * 0.62;
     starPositions[positionIndex + 2] = z;
 
-    const twinkleStrength = starTwinkleAmount / 100;
+    const twinkleStrength = sceneMotionReduced ? 0.16 : (starTwinkleAmount / 100) * (1 + idleBlend * 0.18);
     const twinkle = 1 - twinkleStrength * 0.38 + Math.sin(time * 0.0024 + seed.pulse) * twinkleStrength * 0.26;
     const brightness = Math.max(0.46, Math.min(1, twinkle));
     starColors[positionIndex] = seed.color[0] * brightness;
@@ -245,10 +249,14 @@ function updateNebula(time) {
     layer.material.rotation += speed * 16.67;
     layer.position.x += Math.sin(time * (0.00012 + index * 0.00003) + index) * 0.002;
     layer.position.y += Math.cos(time * (0.0001 + index * 0.00002) + index) * 0.0015;
+    const motionScale = sceneMotionReduced ? 0.72 : 1 + idleBlend * 0.18;
+    layer.material.opacity = nebulaBaseOpacity[index] * motionScale;
   });
 }
 
 function animate(time = 0) {
+  const idleTarget = !sceneMotionReduced && time - lastInputTime > 8000 ? 1 : 0;
+  idleBlend += (idleTarget - idleBlend) * 0.018;
   updateNebula(time);
   updateDust(time);
   updateStars(time);
@@ -263,9 +271,28 @@ function handleResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
+function markInput() {
+  lastInputTime = performance.now();
+}
+
 window.addEventListener("mousemove", (event) => {
+  markInput();
+  if (sceneMotionReduced) {
+    mouse.x += (0 - mouse.x) * 0.12;
+    mouse.y += (0 - mouse.y) * 0.12;
+    return;
+  }
   mouse.x = (event.clientX / window.innerWidth - 0.5) * 2;
   mouse.y = (event.clientY / window.innerHeight - 0.5) * 2;
+});
+
+["scroll", "keydown", "pointerdown", "touchstart"].forEach((eventName) => {
+  window.addEventListener(eventName, markInput, { passive: true });
+});
+
+window.addEventListener("portfolio:motionchange", (event) => {
+  sceneMotionReduced = event.detail.reduced;
+  markInput();
 });
 
 window.addEventListener("resize", handleResize);

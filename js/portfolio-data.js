@@ -2,17 +2,14 @@ const portfolioData = {
   name: "Vraj Patel",
   title: "Developer focused on web, mobile, data, and AI",
   roles: ["web experiences", "mobile apps", "data systems", "AI integrations"],
-  bio: "Computer Science student at New York Institute of Technology concentrating in AI, with hands-on experience building responsive ecommerce, mobile finance, and database management systems. I like turning complex workflows into interfaces that feel clear, fast, and useful.",
+  bio: "I build things that work end to end: interfaces, databases, and the systems in between. Currently finishing a CS degree with an AI concentration at NYIT, freelancing on production e-commerce sites, and shipping side projects like an AI-powered finance app and a multi-database management tool used for student instruction.",
   email: "vrajkp501@gmail.com",
   phone: "(646) 492-0266",
   location: "New York, United States",
   resumeLink: "assets/Vraj_Patel_Resume_Updated_2026.pdf",
   social: {
     github: "https://github.com/VPGHb",
-    linkedin: "https://www.linkedin.com/in/P-Vraj",
-    twitter: "#",
-    youtube: "#",
-    devto: "#"
+    linkedin: "https://www.linkedin.com/in/P-Vraj"
   },
   stats: [
     { label: "GPA", value: "3.91" },
@@ -45,51 +42,46 @@ const portfolioData = {
   projects: [
     {
       title: "Lumen Finance",
-      description: "Full-stack personal finance mobile app for tracking expenses, budgets, savings goals, recurring transactions, analytics, and AI-powered financial insights.",
-      tech: ["React Native", "Expo", "Supabase", "TypeScript", "Groq API"],
+      meta: "React Native\nExpo · Supabase",
+      summary: "AI assisted mobile finance app for budgets, transactions, savings goals, and spending insight.",
+      image: "",
+      points: [
+        "Built a full stack mobile finance app with secure auth, transaction management, budget tracking, and savings goals, using Supabase Row Level Security",
+        "Integrated AI powered financial insights via Groq's Llama 3.3 70B through Supabase Edge Functions to deliver personalized spending recommendations",
+        "Developed interactive analytics dashboards with period based bar charts and category breakdowns using TypeScript and NativeWind"
+      ],
+      tech: ["React Native", "Expo", "Supabase", "TypeScript"],
       liveLink: "",
-      githubLink: "https://github.com/VPGHb/LumenFinance",
+      githubLink: "https://github.com/VPGHb",
       accent: "#00D4FF"
     },
     {
-      title: "PolyDB Manager",
-      description: "Unified JavaFX database manager for PostgreSQL, MySQL, and Oracle with table browsing, schema viewing, row and column editing, search, filtering, and validation feedback.",
-      tech: ["Java", "JavaFX", "JDBC", "PostgreSQL", "MySQL", "Oracle"],
+      title: "Database Management System",
+      meta: "Java\nJavaFX",
+      summary: "A JavaFX teaching tool that makes multi database CRUD workflows approachable for non expert users.",
+      image: "",
+      points: [
+        "Led development of a multiple DBMS application supporting PostgreSQL, MySQL, and Oracle with full CRUD operations, adopted by NYIT's Entrepreneurship Center for student instruction",
+        "Architected a JavaFX frontend with JDBC connectivity, removing the need for deep SQL syntax knowledge across three database platforms",
+        "Improved database management efficiency by 40% with a unified table, row, and column level interface for non expert users"
+      ],
+      tech: ["Java", "JavaFX", "JDBC", "PostgreSQL", "MySQL", "OracleDB"],
       liveLink: "",
-      githubLink: "https://github.com/VPGHb/PolyDB-Manager",
+      githubLink: "https://github.com/VPGHb",
       accent: "#FF6B6B"
     },
     {
       title: "Avanti Jewels",
-      description: "Responsive production ecommerce website for a jewelry business with 9 product categories, product detail pages, filtering, sorting, image galleries, lightbox viewing, and theme persistence.",
+      meta: "HTML5\nCSS3 · JavaScript",
+      summary: "Production ecommerce storefront for a jewelry business with polished browsing and product discovery.",
+      image: "",
+      points: [
+        "Responsive production ecommerce website for a jewelry business with 9 product categories, product detail pages, filtering, sorting, image galleries, lightbox viewing, and theme persistence"
+      ],
       tech: ["HTML5", "CSS3", "JavaScript", "GitHub Pages", "Custom Domain"],
       liveLink: "http://avantijewels.com/",
       githubLink: "https://github.com/VPGHb/Avanti-jewels",
-      accent: "#6C63FF"
-    },
-    {
-      title: "Lumen AI Insights",
-      description: "Secure AI insight flow inside Lumen Finance that aggregates income, expense, and savings metrics, calls a Supabase Edge Function, and returns personalized guidance from Groq Llama 3.3 70B.",
-      tech: ["Supabase Edge Functions", "Deno", "Groq", "RLS", "JWT"],
-      liveLink: "",
-      githubLink: "https://github.com/VPGHb/LumenFinance",
-      accent: "#1DE9B6"
-    },
-    {
-      title: "Online Store Management System",
-      description: "Desktop store management application with three-tier access for customers, employees, and administrators, covering accounts, products, carts, coupons, orders, status updates, and order history.",
-      tech: ["Java", "Swing", "MySQL", "JDBC", "Role-Based Access"],
-      liveLink: "",
-      githubLink: "https://github.com/VPGHb/OnlineStore",
-      accent: "#FFD166"
-    },
-    {
-      title: "Database Teaching Tool",
-      description: "Academic database interface built to reduce friction for students and non-expert users by turning multi-database table operations into guided visual workflows.",
-      tech: ["Java", "JavaFX", "JDBC", "OracleDB", "PostgreSQL", "MySQL"],
-      liveLink: "",
-      githubLink: "https://github.com/VPGHb/PolyDB-Manager",
-      accent: "#00D4FF"
+      accent: "#C2CABB"
     }
   ],
   skills: [
@@ -105,26 +97,6 @@ const portfolioData = {
     { name: "AWS", percentage: 58, icon: "fa-aws", detail: "EC2/S3 fundamentals and cloud basics" },
     { name: "TypeScript", percentage: 80, icon: "fa-code", detail: "Typed mobile app logic and safer interfaces" },
     { name: "Next.js", percentage: 64, icon: "fa-layer-group", detail: "Modern React app architecture fundamentals" }
-  ],
-  testimonials: [
-    {
-      quote: "Built a polished ecommerce experience with the responsiveness and practical details a real storefront needs.",
-      author: "Freelance Project Signal",
-      role: "Avanti Jewels",
-      rating: 5
-    },
-    {
-      quote: "Turns database complexity into approachable workflows for learners and non-expert users.",
-      author: "Academic Project Signal",
-      role: "PolyDB Manager",
-      rating: 5
-    },
-    {
-      quote: "Pairs product thinking with AI tools to move faster while keeping the interface clear.",
-      author: "Development Signal",
-      role: "Lumen Finance",
-      rating: 5
-    }
   ],
   education: {
     school: "New York Institute of Technology",
