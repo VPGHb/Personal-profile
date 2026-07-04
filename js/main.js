@@ -167,9 +167,10 @@ function setupProjectDetails(projects) {
 
   function renderProject(project) {
     panel.style.setProperty("--accent", project.accent || "#C2CABB");
+    const fallbackLabel = project.imageLabel || project.title;
     media.innerHTML = project.image
       ? `<img src="${project.image}" alt="${project.title} preview">`
-      : `<div class="project-detail-placeholder"><span>${project.title}</span></div>`;
+      : `<div class="project-detail-placeholder"><span>${fallbackLabel}</span></div>`;
 
     content.innerHTML = `
       <div class="project-detail-meta">${String(project.meta || "").split("\n").map((line) => `<span>${line}</span>`).join("")}</div>

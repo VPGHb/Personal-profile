@@ -1,22 +1,18 @@
 # Vraj Patel Portfolio
 
-![HTML5](https://img.shields.io/badge/HTML5-structure-E34F26)
-![CSS3](https://img.shields.io/badge/CSS3-design-1572B6)
-![JavaScript](https://img.shields.io/badge/JavaScript-interactions-F7DF1E)
-![Three.js](https://img.shields.io/badge/Three.js-animated_background-000000)
-![Anime.js](https://img.shields.io/badge/Anime.js-scroll_motion-FF4B8B)
+Dark, minimal personal portfolio website for presenting my work across web development, mobile apps, data systems, and AI-powered projects.
 
-A dark, minimal personal portfolio website built to introduce my work across web development, mobile apps, data systems, and AI-powered projects. The site uses a continuously animated Three.js starfield background, glass-inspired portfolio sections, project data driven from JavaScript, and tasteful scroll-based animation.
+The site is a static frontend built with HTML, CSS, and JavaScript. It includes a continuously animated Three.js starfield background, scroll-triggered section motion, a project detail dialog, a dynamic Hicksville / Long Island contact map, and data-driven portfolio content.
 
-## Live Preview
+## Preview
 
-Run locally with a static server:
+Run the site with a local static server:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open:
+Open:
 
 ```text
 http://127.0.0.1:8000/
@@ -28,59 +24,53 @@ Do not open `index.html` directly with `file://`. The site uses JavaScript modul
 
 | Feature | Description |
 | --- | --- |
-| Animated Space Background | Three.js particle scene with moving stars, dust, twinkle, rare star colors, and a fixed canvas backdrop. |
-| Portfolio Sections | Hero, about, experience, projects, skills, signals, and contact sections. |
-| Project Cards | Data-driven project cards highlighting GitHub projects and production work. |
-| Resume Access | Download link for the latest resume PDF. |
-| Dynamic Contact Map | Hicksville / Long Island map with New York time, day/night styling, and availability window. |
-| Scroll Animation | Lightweight Anime.js scroll reveals with IntersectionObserver fallback. |
-| Responsive Layout | Desktop-first cinematic layout with mobile-friendly grid fallbacks. |
+| Animated starfield | Fixed Three.js canvas with moving stars, dust, twinkle, and rare star colors. |
+| Portfolio content | Hero, about, education, experience, projects, skills, and contact sections. |
+| Project details | Clickable project cards open an accessible detail dialog with project images, points, tags, and links. |
+| Motion controls | Motion toggle, scroll reveals, magnetic cursor states, and reduced-motion handling. |
+| Dynamic map | Long Island map centered around Hicksville with New York time and day/night styling. |
+| Static hosting | Works on GitHub Pages or any static file host when served over `http://` or `https://`. |
 
 ## Featured Projects
 
 ### Lumen Finance
 
-Full-stack personal finance mobile app for expense tracking, budgets, savings goals, recurring transactions, analytics, and AI-powered financial insights.
+Full-stack mobile finance app with secure auth, transaction management, budget tracking, savings goals, and AI-powered spending insight.
 
-**Tech:** React Native, Expo, Supabase, TypeScript, Groq API
+**Tech:** React Native, Expo, Supabase, TypeScript
 
-### PolyDB Manager
+### Database Management System
 
-JavaFX database manager for PostgreSQL, MySQL, and Oracle. Includes table browsing, schema viewing, row and column editing, search, filtering, and validation feedback through a unified JDBC interface.
+JavaFX teaching tool for PostgreSQL, MySQL, and Oracle that makes CRUD operations approachable for non-expert users through a unified JDBC interface.
 
-**Tech:** Java, JavaFX, JDBC, PostgreSQL, MySQL, Oracle
+**Tech:** Java, JavaFX, JDBC, PostgreSQL, MySQL, OracleDB
 
 ### Avanti Jewels
 
-Responsive production ecommerce website for a jewelry business with product categories, product detail pages, filtering, sorting, image galleries, lightbox viewing, theme persistence, GitHub Pages hosting, and custom domain setup.
+Responsive production ecommerce website for a jewelry business with category pages, product detail pages, filtering, sorting, image galleries, lightbox viewing, theme persistence, GitHub Pages hosting, and custom domain setup.
 
 **Tech:** HTML5, CSS3, JavaScript, GitHub Pages, Custom Domain
-
-### Online Store Management System
-
-Desktop store management application with customer, employee, and administrator access levels. Supports accounts, products, carts, coupons, orders, status updates, and order history.
-
-**Tech:** Java, Swing, MySQL, JDBC
 
 ## Tech Stack
 
 | Category | Tools |
 | --- | --- |
 | Structure | HTML5 |
-| Styling | CSS3, responsive layout, glass UI |
+| Styling | CSS3 |
 | Interactions | JavaScript |
-| 3D Background | Three.js |
+| Background | Three.js |
 | Motion | Anime.js, IntersectionObserver |
 | Icons | Font Awesome |
 | Fonts | Google Fonts |
 | Map | OpenStreetMap embed |
-| Hosting Target | GitHub Pages or any static hosting provider |
 
 ## File Structure
 
 ```text
 Personal-profile/
 |-- assets/
+|   |-- avanti-jewels-logo.png
+|   |-- lumen-finance-logo.jpeg
 |   |-- vraj-profile.png
 |   `-- Vraj_Patel_Resume_Updated_2026.pdf
 |-- css/
@@ -91,8 +81,6 @@ Personal-profile/
 |   |-- portfolio-data.js
 |   `-- three-scene.js
 |-- index.html
-|-- script.js
-|-- stylr.css
 `-- README.md
 ```
 
@@ -124,7 +112,7 @@ http://127.0.0.1:8000/
 
 ## Customization
 
-Most portfolio content lives in:
+Portfolio text, project details, links, and image paths live in:
 
 ```text
 js/portfolio-data.js
@@ -141,23 +129,25 @@ Useful controls include:
 ```js
 const starTravelSpeed = 1.8;
 const starTwinkleAmount = 60;
-const linearStarAmount = .3;
+const linearStarAmount = 0.3;
 const starCount = 5200;
 const dustCount = 9000;
 ```
 
-## Deployment Notes
+## Deployment
 
-This is a static website, so it can be deployed with GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any static file host.
+This is a static website. Deploy it with GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any static host.
 
-Because the site uses ES modules and CDN imports, it should be served over `http://` or `https://`, not opened as a local `file://` document.
+Because the site uses ES modules and CDN imports, serve it over `http://` or `https://`.
 
 ## Contact
 
-**Vraj Patel**  
-GitHub: [VPGHb](https://github.com/VPGHb)  
+**Vraj Patel**
+
+GitHub: [VPGHb](https://github.com/VPGHb)
+
 LinkedIn: [P-Vraj](https://www.linkedin.com/in/P-Vraj)
 
 ## License
 
-This project is intended as a personal portfolio website. All personal branding, resume content, and profile imagery belong to Vraj Patel.
+This project is intended as a personal portfolio website. Personal branding, resume content, and profile imagery belong to Vraj Patel.

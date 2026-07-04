@@ -42,9 +42,9 @@ const portfolioData = {
   projects: [
     {
       title: "Lumen Finance",
-      meta: "React Native\nExpo · Supabase",
+      meta: "React Native\nExpo / Supabase",
       summary: "AI assisted mobile finance app for budgets, transactions, savings goals, and spending insight.",
-      image: "",
+      image: "assets/lumen-finance-logo.jpeg",
       points: [
         "Built a full stack mobile finance app with secure auth, transaction management, budget tracking, and savings goals, using Supabase Row Level Security",
         "Integrated AI powered financial insights via Groq's Llama 3.3 70B through Supabase Edge Functions to deliver personalized spending recommendations",
@@ -60,6 +60,7 @@ const portfolioData = {
       meta: "Java\nJavaFX",
       summary: "A JavaFX teaching tool that makes multi database CRUD workflows approachable for non expert users.",
       image: "",
+      imageLabel: "NYIT",
       points: [
         "Led development of a multiple DBMS application supporting PostgreSQL, MySQL, and Oracle with full CRUD operations, adopted by NYIT's Entrepreneurship Center for student instruction",
         "Architected a JavaFX frontend with JDBC connectivity, removing the need for deep SQL syntax knowledge across three database platforms",
@@ -72,9 +73,9 @@ const portfolioData = {
     },
     {
       title: "Avanti Jewels",
-      meta: "HTML5\nCSS3 · JavaScript",
+      meta: "HTML5\nCSS3 / JavaScript",
       summary: "Production ecommerce storefront for a jewelry business with polished browsing and product discovery.",
-      image: "",
+      image: "assets/avanti-jewels-logo.png",
       points: [
         "Responsive production ecommerce website for a jewelry business with 9 product categories, product detail pages, filtering, sorting, image galleries, lightbox viewing, and theme persistence"
       ],
