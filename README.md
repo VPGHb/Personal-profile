@@ -29,7 +29,7 @@ Do not open `index.html` directly with `file://`. The site uses JavaScript modul
 | Project details | Clickable project cards open an accessible detail dialog with project images, points, tags, and links. |
 | Motion controls | Motion toggle, scroll reveals, magnetic cursor states, and reduced-motion handling. |
 | Dynamic map | Long Island map centered around Hicksville with New York time and day/night styling. |
-| Static hosting | Works on GitHub Pages or any static file host when served over `http://` or `https://`. |
+| Static hosting | Works on GitHub Pages from the `/docs` folder or any static file host when served over `http://` or `https://`. |
 
 ## Featured Projects
 
@@ -75,6 +75,12 @@ Personal-profile/
 |   `-- Vraj_Patel_Resume_Updated_2026.pdf
 |-- css/
 |   `-- style.css
+|-- docs/
+|   |-- assets/
+|   |-- css/
+|   |-- js/
+|   |-- .nojekyll
+|   `-- index.html
 |-- js/
 |   |-- animations.js
 |   |-- main.js
@@ -137,6 +143,14 @@ const dustCount = 9000;
 ## Deployment
 
 This is a static website. Deploy it with GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any static host.
+
+For GitHub Pages, use:
+
+```text
+Source: Deploy from a branch
+Branch: main
+Folder: /docs
+```
 
 Because the site uses ES modules and CDN imports, serve it over `http://` or `https://`.
 

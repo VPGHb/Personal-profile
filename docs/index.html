@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vraj Patel - Computer Science and AI portfolio featuring web, mobile, database, and AI-powered projects.">
+  <title>Vraj Patel | AI-Focused Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=20260703">
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span class="cursor-label"></span></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <canvas id="three-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#home" aria-label="Vraj Patel home">VRAJ PATEL</a>
+    <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="chapter-indicator" id="chapter-indicator" aria-live="polite">01 / About</span>
+    <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false">
+      <i class="fa-solid fa-wave-square"></i>
+      <span>Motion</span>
+    </button>
+    <span class="status-tag"><span class="dot" aria-hidden="true"></span>open to work</span>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <p class="eyebrow reveal">Full-Stack Developer / AI & CS @ NYIT</p>
+        <h1 class="hero-title reveal">VRAJ<br><span>PATEL</span></h1>
+        <p class="hero-copy reveal">Computer Science student at NYIT, <strong>3.91 GPA</strong>, building full-stack products end to end, from e-commerce storefronts to <strong>AI-assisted</strong> finance apps.</p>
+      </div>
+      <aside class="hero-photo-wrap reveal" aria-label="Profile photo">
+        <img src="assets/vraj-profile.png" alt="Portrait of Vraj Patel">
+        <span class="photo-frame-label">NY / 2026</span>
+      </aside>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to about">
+        <span></span>
+      </a>
+    </section>
+
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span><i class="fa-solid fa-circle"></i>JavaScript</span>
+        <span><i class="fa-solid fa-circle"></i>TypeScript</span>
+        <span><i class="fa-solid fa-circle"></i>React Native</span>
+        <span><i class="fa-solid fa-circle"></i>Java</span>
+        <span><i class="fa-solid fa-circle"></i>Supabase</span>
+        <span><i class="fa-solid fa-circle"></i>PostgreSQL</span>
+        <span><i class="fa-solid fa-circle"></i>Python</span>
+        <span><i class="fa-solid fa-circle"></i>Artificial Intelligence</span>
+        <span><i class="fa-solid fa-circle"></i>JavaScript</span>
+        <span><i class="fa-solid fa-circle"></i>TypeScript</span>
+        <span><i class="fa-solid fa-circle"></i>React Native</span>
+        <span><i class="fa-solid fa-circle"></i>Java</span>
+        <span><i class="fa-solid fa-circle"></i>Supabase</span>
+        <span><i class="fa-solid fa-circle"></i>PostgreSQL</span>
+        <span><i class="fa-solid fa-circle"></i>Python</span>
+        <span><i class="fa-solid fa-circle"></i>Artificial Intelligence</span>
+      </div>
+    </div>
+
+    <section class="about section" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">About</p>
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p id="bio-text"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="education section" id="education">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Education</p>
+        <h2>Education</h2>
+      </div>
+      <div class="education-list reveal">
+        <div class="edu-row">
+          <div>
+            <div class="edu-school">New York Institute of Technology</div>
+            <div class="edu-meta">Bachelor of Computer Science, Concentration in AI · Old Westbury, NY · <span class="edu-gpa">GPA 3.91</span></div>
+            <div class="courses">
+              <span class="course-tag">Data Structures</span>
+              <span class="course-tag">Algorithms</span>
+              <span class="course-tag">Operating Systems</span>
+              <span class="course-tag">Theory of Computation</span>
+              <span class="course-tag">Computer Networks</span>
+              <span class="course-tag">Database Management</span>
+              <span class="course-tag">Artificial Intelligence</span>
+              <span class="course-tag">Software Engineering</span>
+            </div>
+          </div>
+          <span class="edu-date">Expected Dec 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience section" id="experience">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Experience</p>
+        <h2>Experience</h2>
+      </div>
+      <div class="timeline" id="experience-list"></div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Projects</p>
+        <h2>Projects</h2>
+      </div>
+      <div class="project-carousel-shell">
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <section class="skills section" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Skills</p>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-shell">
+        <div class="skill-grid" id="skill-grid"></div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's build something useful.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-panel reveal">
+          <div id="contact-details"></div>
+          <div class="location-map">
+            <iframe
+              title="Map showing Long Island with a pin at Hicksville"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-73.98%2C40.50%2C-72.95%2C41.02&amp;layer=mapnik&amp;marker=40.7684%2C-73.5251"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-status" aria-live="polite">
+              <span class="map-mode" id="map-mode">Local mode</span>
+              <strong id="ny-time">New York time</strong>
+              <span>Available Mon-Fri, 12-5 PM</span>
+            </div>
+            <a class="map-link" href="https://www.openstreetmap.org/?mlat=40.7684&amp;mlon=-73.5251#map=10/40.7684/-73.5251" target="_blank" rel="noreferrer">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Hicksville, Long Island</span>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <label>
+            <input type="text" name="name" placeholder=" " required>
+            <span>Name</span>
+          </label>
+          <label>
+            <input type="email" name="email" placeholder=" " required>
+            <span>Email</span>
+          </label>
+          <label>
+            <textarea name="message" rows="5" placeholder=" " required></textarea>
+            <span>Message</span>
+          </label>
+          <button class="btn btn-primary magnetic contact-submit" id="contact-submit" type="submit"><i class="fa-solid fa-paper-plane"></i><span>Send</span></button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Vraj Patel. Built with intention.</p>
+    <div class="footer-social" id="footer-social"></div>
+    <a class="back-top" href="#home" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+  </footer>
+
+  <div class="command-palette" id="command-palette" aria-hidden="true">
+    <div class="command-panel" role="dialog" aria-modal="true" aria-labelledby="command-title" tabindex="-1">
+      <div class="command-topline">
+        <span id="command-title">Command</span>
+        <kbd>Esc</kbd>
+      </div>
+      <input id="command-input" type="text" autocomplete="off" spellcheck="false" placeholder="Jump, copy, open...">
+      <div class="command-list" id="command-list" role="listbox"></div>
+    </div>
+  </div>
+
+  <div class="project-detail-modal" id="project-detail-modal" aria-hidden="true">
+    <div class="project-detail-panel" role="dialog" aria-modal="true" aria-labelledby="project-detail-title" tabindex="-1">
+      <button class="project-detail-close" id="project-detail-close" type="button" aria-label="Close project details">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="project-detail-media" id="project-detail-media"></div>
+      <div class="project-detail-content" id="project-detail-content"></div>
+    </div>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js",
+        "animejs": "https://cdn.jsdelivr.net/npm/animejs/+esm"
+      }
+    }
+  </script>
+  <script src="js/portfolio-data.js?v=20260703d"></script>
+  <script src="js/main.js?v=20260703d"></script>
+  <script type="module" src="js/animations.js?v=20260703d"></script>
+  <script type="module" src="js/three-scene.js?v=20260703d"></script>
+</body>
+</html>
