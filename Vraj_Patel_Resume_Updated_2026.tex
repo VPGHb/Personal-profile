@@ -1,0 +1,200 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage[margin=1.2cm]{geometry}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-12pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-10pt}]
+
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{0pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}
+    \vspace{-8pt}
+    \item[]
+}
+
+\newcommand{\resumeProjectHeading}[3][-10pt]{
+  \item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#2 & \textbf{\small #3}\\
+  \end{tabular*}\vspace{#1}
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}, noitemsep, nolistsep, topsep=0pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[noitemsep, nolistsep, topsep=2pt, parsep=0pt, partopsep=0pt, leftmargin=*]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+\setlength{\itemsep}{-2pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+\setlength{\itemindent}{0pt}
+\setlength{\leftskip}{0pt}
+
+%----------HEADING----------
+\begin{center}
+    {\Large \scshape Vraj Patel} \\ \vspace{1pt}
+    \small
+    \faPhone\ (646) 492-0266 ~$|$  
+    \faEnvelope\ \href{mailto:vrajkp501@gmail.com}{vrajkp501@gmail.com} ~ $|$ 
+    \faLinkedin\ \href{https://www.linkedin.com/in/P-Vraj}{linkedin.com/in/P-Vraj} ~$|$ 
+    \faGithub\ \href{https://github.com/VPGHb}{github.com/VPGHb}
+    \vspace{-5pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {New York Institute of Technology}{Old Westbury, NY}
+      {Bachelor of Computer Science Concentration in AI $|$ \textbf{GPA: 3.91}}{Expected Graduation: Dec 2026}
+      \resumeItemListStart
+        \resumeItem{\textbf{Courses}: Data Structures, Design and Analysis of Algorithms, Operating Systems, Theory of Computation, Computer Networks, Database Management, Artificial Intelligence, Software Engineering}
+      \resumeItemListEnd
+      \vspace{-5pt}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {Avanti Jewels E-commerce Website}{Hicksville, NY}
+      {Front-End Web Developer (Freelance) $|$ \emph{\href{http://avantijewels.com/}{Live Site}} $|$ \emph{\href{https://github.com/VPGHb/Avanti-jewels}{Source Code}}}{December 2025 -- January 2026}
+      \resumeItemListStart
+        \resumeItem{Fully Developed a responsive e-commerce platform using JavaScript, Css, and Html with 10+ product category pages using pure fronted technologies, featuring a 3-column product grid with filtering, sorting, and pagination}
+        \resumeItem{Implemented a dual theme system with localStorage persistence, interactive image galleries with lightbox functionality, and published website with custom domain configuration (DNS, A records)}
+        \resumeItem{Engineered mobile-first responsive design with touch-optimized UI, horizontal scrolling on mobile, and performance optimizations for fast loading across all devices}
+        \resumeItem{Used GitHub Copilot and Claud to accelerate debugging, refactoring, and JavaScript logic implementation}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Signature Smile Dental}{Bristol, PA}
+      {Technical Mentorship Clinical Systems \& Workflow}{December 2022 -- March 2023}
+      \resumeItemListStart
+        \resumeItem{Analyzed digital patient management infrastructure including electronic health records (EHR) database, appointment scheduling system, and digital radiography (X-ray) imaging software integration}
+        \resumeItem{Observed practice management software workflows for patient charting and treatment planning, reviewing approximately 8-10 patient charts per session across 60+ hours of clinical mentorship}
+        \resumeItem{Documented end-to-end clinical data flow from patient intake through treatment completion, including digital record-keeping, insurance processing, and automated follow-up scheduling protocols}
+      \resumeItemListEnd
+      \vspace{-5pt}
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\vspace{-4pt}
+\resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Lumen Finance} $|$ \emph{\href{https://github.com/VPGHb/LumenFinance}{Source Code}}}{React Native, Expo, Supabase}
+      \vspace{-4pt}
+      \resumeItemListStart
+        \resumeItem{Built a full-stack mobile finance app with secure authentication, transaction management, budget tracking, and savings goals using React Native, Expo, and Supabase with Row Level Security}
+        \resumeItem{Integrated AI-powered financial insights via Groq's Llama 3.3 70B model using Supabase Edge Functions, delivering personalized spending recommendations based on user transaction data}
+        \resumeItem{Developed interactive analytics dashboards with period-based bar charts (Week, Month, 6 Month, Year) and category spending breakdowns using TypeScript and NativeWind}
+      \resumeItemListEnd
+      \vspace{-15pt}
+
+    \resumeProjectHeading
+      {\textbf{Database Management System} $|$ \href{https://github.com/VPGHb/PolyDB-Manager}{Source Code}}{Java, JavaFX}
+      \resumeItemListStart
+      \vspace{8pt}
+        \resumeItem{Led development of a multi-DBMS management application supporting PostgreSQL, MySQL, and Oracle databases with full CRUD operations, adopted by NYIT's Entrepreneurship Center for student database instruction}
+        \resumeItem{Architected full-stack solution with JavaFX frontend and JDBC connectivity, reducing SQL query learning curve by eliminating the need for deep syntax knowledge across three database platforms}
+        \resumeItem{Improved database management efficiency by 40\% through unified table-level and row/column operations interface, enabling non-expert users to perform complex data manipulations without writing raw SQL}
+      \resumeItemListEnd
+      \vspace{-5pt}
+
+    \resumeProjectHeading
+      {\textbf{Personal Website} $|$ \href{https://vpghb.github.io/Personal-profile/}{Live Site} $|$ \href{https://github.com/VPGHb/Personal-profile}{Source Code}}{HTML, CSS, JavaScript, Three.js}
+      \resumeItemListStart
+      \vspace{8pt}
+        \resumeItem{Designed and deployed a responsive portfolio website with a dark cinematic interface, animated Three.js starfield background, scroll-triggered section motion, and project detail modals}
+        \resumeItem{Built a data-driven project system in JavaScript to showcase software, mobile, database, and AI-focused work with accessible interactions and GitHub Pages deployment}
+      \resumeItemListEnd
+      \vspace{-5pt}
+\resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\resumeSubHeadingListStart
+\vspace{-2pt}
+    \resumeProjectHeading[-2pt]
+      {\textbf{Cisco IT Essentials}}{June 2021}
+      \resumeItemListStart
+        \resumeItem{OS configuration (Windows, macOS, Linux), hardware repair and maintenance, component installation}
+      \resumeItemListEnd
+      \vspace{-16pt}
+    \resumeProjectHeading[-2pt]
+      {\textbf{ServiceNow Fundamentals (Self-Directed)}}{2025}
+      \resumeItemListStart
+        \resumeItem{Explored incident management, workflow automation, and IT service management (ITSM) concepts}
+      \resumeItemListEnd
+      \vspace{-16pt}
+    \resumeProjectHeading[-2pt]
+      {\textbf{LinkedIn Learning: AI Pair Programming (In Progress)}}{2025}
+      \resumeItemListStart
+        \resumeItem{GitHub Copilot for accelerated development and debugging workflows}
+      \resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-5pt}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}, noitemsep, nolistsep, topsep=0pt]
+\vspace{4pt}
+    \small{\item{
+     \textbf{Languages:} Java, Python, C++, JavaScript, TypeScript, HTML, CSS \\
+     \textbf{Frontend:} React Native, Expo, Expo Router, NativeWind, Tailwind CSS \\
+     \textbf{Backend \& DB:} Supabase, PostgreSQL, MySQL, OracleDB, RLS \\
+     \textbf{AI \& Tools:} GitHub Copilot, ChatGPT, Deepseek, Groq API, Llama 3.3 70B, Deno \\
+     \textbf{Environments \& OS:} Windows, Linux (Ubuntu), macOS, VirtualBox, Bash, SSH \\
+     \textbf{Cloud \& DevOps (Learning):} Docker, AWS (EC2/S3 — fundamentals), MFA protocols \\
+     \textbf{Networking:} TCP/IP, DNS (A/Quad records), HTTP/HTTPS \\
+     \textbf{Collaboration:} Slack, Zoom, Microsoft Teams, GitHub Projects, Git \\
+    }}
+\end{itemize}
+
+\end{document}

@@ -4,7 +4,15 @@ Dark, minimal personal portfolio website for presenting my work across web devel
 
 The site is a static frontend built with HTML, CSS, and JavaScript. It includes a continuously animated Three.js starfield background, scroll-triggered section motion, a project detail dialog, a dynamic Hicksville / Long Island contact map, and data-driven portfolio content.
 
-## Preview
+## Live Website
+
+The portfolio is live on GitHub Pages:
+
+```text
+https://vpghb.github.io/Personal-profile/
+```
+
+## Local Preview
 
 Run the site with a local static server:
 
@@ -29,7 +37,7 @@ Do not open `index.html` directly with `file://`. The site uses JavaScript modul
 | Project details | Clickable project cards open an accessible detail dialog with project images, points, tags, and links. |
 | Motion controls | Motion toggle, scroll reveals, magnetic cursor states, and reduced-motion handling. |
 | Dynamic map | Long Island map centered around Hicksville with New York time and day/night styling. |
-| Static hosting | Works on GitHub Pages from the `/docs` folder or any static file host when served over `http://` or `https://`. |
+| Static hosting | Published with GitHub Pages from the `/docs` folder. |
 
 ## Featured Projects
 
@@ -142,9 +150,9 @@ const dustCount = 9000;
 
 ## Deployment
 
-This is a static website. Deploy it with GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any static host.
+This is a static website currently deployed with GitHub Pages.
 
-For GitHub Pages, use:
+Current GitHub Pages settings:
 
 ```text
 Source: Deploy from a branch
@@ -152,7 +160,15 @@ Branch: main
 Folder: /docs
 ```
 
+The live site URL is:
+
+```text
+https://vpghb.github.io/Personal-profile/
+```
+
 Because the site uses ES modules and CDN imports, serve it over `http://` or `https://`.
+
+When updating the live site, make sure the published files in `docs/` are kept in sync with the root source files.
 
 ## Contact
 
