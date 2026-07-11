@@ -1,3 +1,17 @@
+<div align="center">
+
+[![Header](https://capsule-render.vercel.app/api?type=waving&color=0:050505,45:2B2B2B,100:C2CABB&height=220&text=Vraj%20Patel%20Portfolio&desc=Developer%20Portfolio%20%7C%20Web%20%7C%20Mobile%20%7C%20Data%20%7C%20AI&fontColor=ffffff&animation=fadeIn&descSize=18&descAlignY=70&textAlignY=38)](https://vpghb.github.io/Personal-profile/)
+
+[![Live Site](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-C2CABB?style=for-the-badge&logo=githubpages&logoColor=111111)](https://vpghb.github.io/Personal-profile/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-2026-111111?style=for-the-badge&logo=aboutdotme&logoColor=white)](https://vpghb.github.io/Personal-profile/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)](https://threejs.org/)
+[![Anime.js](https://img.shields.io/badge/Anime.js-FF4B8B?style=for-the-badge&logoColor=white)](https://animejs.com/)
+
+</div>
+
 # Vraj Patel Portfolio
 
 Dark, minimal personal portfolio website for presenting my work across web development, mobile apps, data systems, and AI-powered projects.
