@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   hydrateProjects(data.projects);
   setupProjectDetails(data.projects);
   hydrateSkills(data.skills);
+  hydrateCertifications(data.certifications || []);
   if (!window.ScrollTrigger) {
     document.querySelectorAll(".skill-card").forEach((card) => card.classList.add("is-visible"));
   }
@@ -304,8 +305,9 @@ function hydrateSkills(skills) {
     {
       label: "AI & Tools",
       items: [
-        ["GitHub Copilot / Claude", "Advanced", 85],
-        ["Groq API / Llama 3.3", "Intermediate", 60]
+        ["GitHub Copilot / Claude / Codex", "Advanced", 85],
+        ["Groq API / Llama 3.3", "Intermediate", 60],
+        ["Gemini / Gmail API", "Intermediate", 58]
       ]
     },
     {
@@ -313,7 +315,7 @@ function hydrateSkills(skills) {
       items: [
         ["Linux / Bash / SSH", "Advanced", 80],
         ["TCP/IP & DNS", "Intermediate", 55],
-        ["Docker / AWS", "Learning", 30]
+        ["Docker / AWS / GitHub Pages", "Learning", 35]
       ]
     }
   ];
@@ -328,6 +330,26 @@ function hydrateSkills(skills) {
         </div>
       `).join("")}
     </div>
+  `).join("");
+}
+
+function hydrateCertifications(certifications) {
+  const target = document.getElementById("cert-grid");
+  if (!target) return;
+
+  target.innerHTML = certifications.map((cert, index) => `
+    <article class="cert-card reveal" style="--i:${index}">
+      <div class="cert-index">${String(index + 1).padStart(2, "0")}</div>
+      <div class="cert-body">
+        <p class="cert-issuer">${cert.issuer}</p>
+        <h3>${cert.title}</h3>
+        <p>${cert.detail}</p>
+        <div class="cert-footer">
+          <span>${cert.date}</span>
+          ${cert.link ? `<a href="${cert.link}" target="_blank" rel="noreferrer">credential &rarr;</a>` : ""}
+        </div>
+      </div>
+    </article>
   `).join("");
 }
 
@@ -506,6 +528,7 @@ function setupAccentObserver(data) {
     experience: "#C2CABB",
     projects: data.projects[0]?.accent || "#C2CABB",
     skills: "#C2CABB",
+    certifications: "#9BE0A8",
     contact: "#C2CABB"
   };
 
@@ -581,6 +604,7 @@ function setupCommandPalette(data) {
     { label: "Go to Experience", hint: "#experience", action: () => location.assign("#experience") },
     { label: "Go to Projects", hint: "#projects", action: () => location.assign("#projects") },
     { label: "Go to Skills", hint: "#skills", action: () => location.assign("#skills") },
+    { label: "Go to Certifications", hint: "#certifications", action: () => location.assign("#certifications") },
     { label: "Go to Contact", hint: "#contact", action: () => location.assign("#contact") },
     { label: "Copy Email", hint: data.email, action: () => copyText(data.email) },
     { label: "Open GitHub", hint: data.social.github, action: () => window.open(data.social.github, "_blank", "noreferrer") },

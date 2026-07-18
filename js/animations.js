@@ -105,11 +105,18 @@ function setupButtonMotion(animate) {
 
 function setupAnimeReveal(animate, onScroll) {
   document.querySelectorAll(".reveal:not(.hero-title):not(.hero-photo-wrap)").forEach((element) => {
+    const revealDelay = Number.parseInt(getComputedStyle(element).getPropertyValue("--reveal-delay"), 10) || 0;
+    const itemIndex = Number.parseInt(getComputedStyle(element).getPropertyValue("--i"), 10) || 0;
+    const staggerDelay = element.matches(".cert-card, .project-card, .skill-group, .experience-card")
+      ? Math.min(itemIndex * 70, 280)
+      : 0;
+
     animate(element, {
       opacity: [0, 1],
       y: [28, 0],
       filter: ["blur(8px)", "blur(0px)"],
       duration: 720,
+      delay: revealDelay + staggerDelay,
       ease: "outCubic",
       autoplay: onScroll({
         target: element,

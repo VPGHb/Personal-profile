@@ -1,8 +1,8 @@
 const portfolioData = {
   name: "Vraj Patel",
   title: "Developer focused on web, mobile, data, and AI",
-  roles: ["web experiences", "mobile apps", "data systems", "AI integrations"],
-  bio: "I build things that work end to end: interfaces, databases, and the systems in between. Currently finishing a CS degree with an AI concentration at NYIT, freelancing on production e-commerce sites, and shipping side projects like an AI-powered finance app and a multi-database management tool used for student instruction.",
+  roles: ["web experiences", "mobile apps", "data systems", "AI integrations", "scroll-driven interfaces"],
+  bio: "I build practical software end to end: responsive web interfaces, mobile apps, databases, AI-assisted tools, and the systems that connect them. I am finishing a Computer Science degree with an AI concentration at NYIT, carrying a 3.91 GPA, freelancing on production websites, and building projects that help me learn by shipping.",
   email: "vrajkp501@gmail.com",
   phone: "(646) 492-0266",
   location: "New York, United States",
@@ -13,7 +13,7 @@ const portfolioData = {
   },
   stats: [
     { label: "GPA", value: "3.91" },
-    { label: "Projects", value: "6+" },
+    { label: "Public repos", value: "9+" },
     { label: "Clinical + tech hours", value: "60+" },
     { label: "Graduation", value: "2026" }
   ],
@@ -25,17 +25,17 @@ const portfolioData = {
       dates: "Dec 2025 - Jan 2026",
       liveLink: "http://avantijewels.com/",
       githubLink: "https://github.com/VPGHb/Avanti-jewels",
-      description: "Developed a responsive ecommerce platform with 10+ product category pages, filtering, sorting, pagination, dual theme persistence, image galleries, lightbox interactions, and custom domain setup.",
-      highlights: ["JavaScript", "HTML", "CSS", "Responsive UI", "DNS"]
+      description: "Launched a responsive production ecommerce site for a jewelry business with 9 product categories, product detail pages, filtering, sorting, image galleries, lightbox viewing, theme persistence, and custom-domain deployment.",
+      highlights: ["JavaScript", "HTML", "CSS", "GitHub Pages", "DNS"]
     },
     {
       company: "Signature Smile Dental",
-      role: "Technical Mentorship - Clinical Systems & Workflow",
+      role: "Intern, Clinical Systems & Workflow",
       location: "Bristol, PA",
       dates: "Dec 2022 - Mar 2023",
       liveLink: "",
       githubLink: "",
-      description: "Analyzed EHR workflows, scheduling systems, digital radiography integration, clinical charting, insurance processing, and automated follow-up flows across 60+ hours of mentorship.",
+      description: "Analyzed EHR, appointment scheduling, and digital radiography workflows across 60+ mentorship hours by observing patient intake, charting, insurance processing, and follow-up scheduling.",
       highlights: ["EHR", "Workflow Analysis", "Data Flow", "Clinical Systems"]
     }
   ],
@@ -56,6 +56,38 @@ const portfolioData = {
       accent: "#00D4FF"
     },
     {
+      title: "Gmail AI Agent",
+      meta: "Python\nGmail API / Gemini",
+      summary: "Secure CLI assistant for Gmail summaries, configurable priority alerts, and local reply recommendations.",
+      image: "",
+      imageLabel: "AI MAIL",
+      points: [
+        "Built a secure Python CLI assistant for Gmail summaries, priority alerts, and local reply recommendations by integrating Gmail OAuth, optional Gemini generation, and deterministic fallback rules",
+        "Reduced automation risk with read-only OAuth by default, two-flag write authorization, dry-run mutation suppression, sensitive log redaction, and offline unit tests",
+        "Structured the project into core Gmail/API services, security gates, agents, CLI commands, configuration, and tests for maintainable future expansion"
+      ],
+      tech: ["Python", "Gmail API", "Gemini", "OAuth", "Pytest"],
+      liveLink: "",
+      githubLink: "https://github.com/VPGHb/gmail-ai-agent",
+      accent: "#9BE0A8"
+    },
+    {
+      title: "GPU Scroll Sequence",
+      meta: "HTML / CSS / JavaScript\nGSAP / Canvas",
+      summary: "Apple-style scroll animation that maps scroll progress to individual AI-generated GPU frames.",
+      image: "",
+      imageLabel: "GPU",
+      points: [
+        "Created a standalone product-style scroll experience using Google Flow generated motion frames, EZGIF frame slicing, GSAP ScrollTrigger, and canvas rendering",
+        "Preloaded 50 frame assets, pinned the canvas during scroll, and mapped scroll progress to exact image frames for a smooth scrubbed animation",
+        "Added parallax intro content, sticky walkthrough panels, responsive layout rules, reduced-motion support, and GitHub Pages deployment"
+      ],
+      tech: ["HTML5", "CSS3", "JavaScript", "GSAP", "Canvas", "Google Flow"],
+      liveLink: "https://vpghb.github.io/Web-GPU-scroll-sequence/",
+      githubLink: "https://github.com/VPGHb/Web-GPU-scroll-sequence",
+      accent: "#C2CABB"
+    },
+    {
       title: "Database Management System",
       meta: "Java\nJavaFX",
       summary: "A JavaFX teaching tool that makes multi database CRUD workflows approachable for non expert users.",
@@ -68,8 +100,23 @@ const portfolioData = {
       ],
       tech: ["Java", "JavaFX", "JDBC", "PostgreSQL", "MySQL", "OracleDB"],
       liveLink: "",
-      githubLink: "https://github.com/VPGHb",
+      githubLink: "https://github.com/VPGHb/PolyDB-Manager",
       accent: "#FF6B6B"
+    },
+    {
+      title: "Personal Portfolio",
+      meta: "HTML / CSS / JavaScript\nThree.js / Anime.js",
+      summary: "Dark cinematic portfolio website built to present web, mobile, data, and AI projects to recruiters.",
+      image: "assets/vraj-profile.png",
+      points: [
+        "Designed and deployed a responsive developer portfolio with a continuously animated Three.js starfield, editorial dark UI, scroll-triggered reveals, project detail dialogs, and contact workflow",
+        "Built data-driven portfolio content in JavaScript so projects, socials, experience, and contact details can be updated without rewriting page structure",
+        "Published through GitHub Pages from the docs folder and hardened the site for module loading through local and hosted static servers"
+      ],
+      tech: ["HTML5", "CSS3", "JavaScript", "Three.js", "Anime.js"],
+      liveLink: "https://vpghb.github.io/Personal-profile/",
+      githubLink: "https://github.com/VPGHb/Personal-profile",
+      accent: "#F8FAFC"
     },
     {
       title: "Avanti Jewels",
@@ -101,8 +148,38 @@ const portfolioData = {
   ],
   education: {
     school: "New York Institute of Technology",
-    degree: "Bachelor of Computer Science, Concentration in AI",
+    degree: "Bachelor of Science in Computer Science, AI Concentration",
     graduation: "Expected Dec 2026",
     gpa: "3.91"
-  }
+  },
+  certifications: [
+    {
+      title: "Career Essentials in Generative AI",
+      issuer: "Microsoft and LinkedIn",
+      date: "Issued Jul 2026",
+      detail: "Generative AI model understanding, prompt engineering, responsible use, and AI-powered business workflows.",
+      link: "https://www.linkedin.com/learning/certificates/7cdd06f0d83fbc3f52c3200e625dcea14527aa605b1e64f3a655a0cfe354f1ee/?trk=share_certificate"
+    },
+    {
+      title: "Responsible AI: Applying AI Principles with Google Cloud",
+      issuer: "Google",
+      date: "Issued Jul 2026",
+      detail: "Responsible AI principles, bias and fairness awareness, transparency, governance, and risk evaluation.",
+      link: "https://www.linkedin.com/in/p-vraj/"
+    },
+    {
+      title: "NYS Real Estate Salesperson License",
+      issuer: "New York State / RealEstateU",
+      date: "Jun 2026 - Jun 2028",
+      detail: "NYS licensed; completed the RealEstateU 77-hour salesperson licensing course.",
+      link: "https://www.linkedin.com/in/p-vraj/"
+    },
+    {
+      title: "25 Hour ETIC Certificate Program",
+      issuer: "New York Institute of Technology",
+      date: "Issued Jul 2025",
+      detail: "Applied project experience connected to Java, Oracle Database, and software development.",
+      link: "https://www.linkedin.com/in/p-vraj/"
+    }
+  ]
 };
